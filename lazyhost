@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+CHOICE=$(gum filter < ~/.cache/lazyhost/merged.txt)
+
+if [[ -n "$CHOICE" ]]; then
+  echo -n "$CHOICE" | pbcopy
+  echo "$(gum style --foreground 212 "$CHOICE") has been copied to your clipboard."
+fi
